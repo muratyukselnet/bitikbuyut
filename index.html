@@ -3,45 +3,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Bi Tık Büyüt JQuery Plugin</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Artık logoyu bir tık büyütmek çok kolay.">
         <script src="jquery.min.js"></script>
+        <script src="bitikbuyut.min.js"></script>
     </head>
     <body>
-        <header>
-            <div class="logowrapper">
-                <img src="gpl.png" class="bitik" width="100">
-                <img src="gpl.png" class="bitik" width="100">
-            </div>
-        </header>
-        <!-- Add your site or application content here -->
-        <p>Some fancy paragraph</p>
-        <button onclick="$('.bitik').bitikbuyut();">Büyüt</button>
-
-
-        <script>
-            (function ( $ ) {
-
-                $.fn.bitikbuyut = function( options ) {
-
-                    var settings = $.extend({
-                        // These are the defaults.
-                        tikvspx: 10,
-                        kactik: 1,
-                        width: 100,
-                        height: 100
-                    }, options );
-
-                    return this.each(function() {
-                        settings.height = this.offsetHeight;
-                        settings.width = this.offsetWidth;
-                    }).css({
-                        height: settings.height + (settings.kactik*settings.tikvspx),
-                        width: settings.width + (settings.kactik*settings.tikvspx)
-                    });
-                };
-
-            }( jQuery ));
-        </script>
+        <div class="logowrapper">
+            <img src="gpl.png" class="bitik" width="100">
+            <img src="gpl.png" class="bitik" width="100">
+        </div>
+        <button onclick="$('.bitik').bitikbuyut({ tikvspx: 50, kactik: 2 });">Büyüt</button>
     </body>
 </html>
